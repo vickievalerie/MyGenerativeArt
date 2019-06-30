@@ -32,14 +32,18 @@ def draw():
     if x%10 == 0:
         background(255)
         for i in d:
-            drawsin(i[0],i[1],i[2],i[3],i[4],i[5])
+            drawsin(*i)
         if len(d)==nsin:
             d=d[1:]
-        d.append([random.randint(50,200),random.randint(5,20),random.randint(100,800),random.randint(5,25),random.randint(30,100),random.randint(1,5)])
+        d.append(gr([(50,200),(5,20),(100,800),(5,25),(30,100),(1,5)]))
         
     x+=1
 
-
+def gr(l):
+    r=[]
+    for i in l:
+        r.append(random.randint(i[0],i[1]))
+    return r
 
 
     
